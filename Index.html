@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 
+    favicon link -->
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./Assests/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./Assests/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./Assests/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./Assests/site.webmanifest" />
+
+    <!-- Google fonts link -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- icons link -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./Style.css" />
+    <script defer src="./Script.js"></script>
+    <title>Triangle Quiz</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"><nav>Triangle Quiz</nav></header>
+      <main class="main-container">
+        <div class="quiz-one">
+          <form class="formTriangle-container">
+            <h3 class="heading">
+              Enter the angles (in degree) to check if they make a triangle
+            </h3>
+            <div class="input-section">
+              <label for="firstAngle">
+                <input type="number" id="firstAngle" class="firstAngle" />
+              </label>
+              <label for="secondAngle">
+                <input type="number" id="secondAngle" class="secondAngle" />
+              </label>
+              <label for="thirdAngle">
+                <input type="number" id="thirdAngle" class="thirdAngle" />
+              </label>
+            </div>
+            <button class="btn-check">Check</button>
+            <h4 class="result">Result will be displayed here</h4>
+          </form>
+
+          <form class="findHypotenuse-container">
+            <h3 class="heading">
+              Enter the length of two legs of a right angled triangle and know
+              its hypotenuse
+            </h3>
+            <div class="input-section">
+              <label for="firstLength">
+                <input type="number" id="firstLength" class="firstLength" />
+              </label>
+              <label for="secondLength">
+                <input type="number" id="secondLength" class="secondLength" />
+              </label>
+            </div>
+            <button class="btn-check">Check</button>
+            <h4 class="result">Result will be displayed here</h4>
+          </form>
+
+          <section class="guessThirdAngle-container">
+            <h3 class="heading">
+              Generate two angles of a triangle and guess the third angle (in
+              degree)
+            </h3>
+            <button class="btn-generateAngle">Generate Angles</button>
+            <form class="input-section">
+              <p>First Angle - <span class="firstAngle"></span>°</p>
+              <p>Second Angle - <span class="secondAngle"></span>°</p>
+              <label for="thirdAngle">
+                <input type="number" id="thirdAngle" class="thirdAngle" />
+              </label>
+              <button class="btn-check">Check</button>
+            </form>
+
+            <h4 class="result">Result will be displayed here</h4>
+          </section>
+
+          <form class="triangleArea-container">
+            <h3 class="heading">
+              Enter the base and height to know the area of a triangle
+            </h3>
+            <div class="input-section">
+              <label for="base">
+                <input type="number" id="base" class="base" />
+              </label>
+              <label for="height">
+                <input type="number" id="height" class="height" />
+              </label>
+            </div>
+            <button class="btn-check">Check</button>
+            <h4 class="result">Result will be displayed here</h4>
+          </form>
+        </div>
+
+        <section class="form-container quiz-two">
+          <div class="generalQuiz-container">
+            <h3 class="heading">Let's play a quiz!</h3>
+            <form class="form">
+              <div class="quiz-container">
+                <div class="quiz-media">
+                  <span> 1 / 8</span>
+
+                  <img
+                    src="Assests/question1.png"
+                    alt="How many sides does a triangle have?"
+                    class="quiz-question_img"
+                  />
+                </div>
+
+                <div class="quiz-question-container">
+                  <h4 class="quiz-question">
+                    How many sides does a triangle have?
+                  </h4>
+                </div>
+
+                <div class="quiz-answers-container">
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-1"
+                      value="2"
+                      class="quiz-answers"
+                      required
+                    />
+                    2</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-1"
+                      value="3"
+                      class="quiz-answers"
+                      required
+                    />3</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-1"
+                      value="4"
+                      class="quiz-answers"
+                      required
+                    />4</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-1"
+                      value="0"
+                      class="quiz-answers"
+                      required
+                    />0</label
+                  >
+                </div>
+              </div>
+
+              <div class="quiz-container">
+                <div class="quiz-media">
+                  <span> 2 / 8 </span>
+
+                  <img
+                    src="Assests/question2.png"
+                    alt="This is an equilateral triangle, but why is it called that?"
+                    class="quiz-question_img"
+                  />
+                </div>
+
+                <div class="quiz-question-container">
+                  <h4 class="quiz-question">
+                    This is an equilateral triangle, but why is it called that?
+                  </h4>
+                </div>
+
+                <div class="quiz-answers-container">
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-2"
+                      value="One side is longer than the others"
+                      class="quiz-answers"
+                      required
+                    />One side is longer than the others</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-2"
+                      value="It can fit inside a circle"
+                      class="quiz-answers"
+                      required
+                    />It can fit inside a circle</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-2"
+                      value="All its sides are equal length"
+                      class="quiz-answers"
+                      required
+                    />All its sides are equal length</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-2"
+                      value="All its angles are 360 degrees"
+                      class="quiz-answers"
+                      required
+                    />All its angles are 360 degrees</label
+                  >
+                </div>
+              </div>
+
+              <div class="quiz-container">
+                <div class="quiz-media">
+                  <span> 3 / 8</span>
+
+                  <img
+                    src="Assests/question3.png"
+                    alt="Which ancient Greek philosopher studied triangles?"
+                    class="quiz-question_img"
+                  />
+                </div>
+
+                <div class="quiz-question-container">
+                  <h4 class="quiz-question">
+                    Which ancient Greek philosopher studied triangles?
+                  </h4>
+                </div>
+
+                <div class="quiz-answers-container">
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-3"
+                      value="Plato"
+                      class="quiz-answers"
+                      required
+                    />Plato</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-3"
+                      value="Socrates"
+                      class="quiz-answers"
+                      required
+                    />Socrates</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-3"
+                      value="Aristotle"
+                      class="quiz-answers"
+                      required
+                    />Aristotle</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-3"
+                      value="Pythagoras"
+                      class="quiz-answers"
+                      required
+                    />Pythagoras</label
+                  >
+                </div>
+              </div>
+
+              <div class="quiz-container">
+                <div class="quiz-media">
+                  <span> 4 / 8</span>
+
+                  <img
+                    src="Assests/question4.png"
+                    alt="What's the name of this type of triangle?"
+                    class="quiz-question_img"
+                  />
+                </div>
+
+                <div class="quiz-question-container">
+                  <h4 class="quiz-question">
+                    What's the name of this type of triangle?
+                  </h4>
+                </div>
+
+                <div class="quiz-answers-container">
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-4"
+                      value="Right angle triangle"
+                      class="quiz-answers"
+                      required
+                    />Right angle triangle</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-4"
+                      value="Obtuse triangle"
+                      class="quiz-answers"
+                      required
+                    />Obtuse triangle</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-4"
+                      value="Acute triangle"
+                      class="quiz-answers"
+                      required
+                    />Acute triangle</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-4"
+                      value="Isosceles triangle"
+                      class="quiz-answers"
+                      required
+                    />Isosceles triangle</label
+                  >
+                </div>
+              </div>
+              <div class="quiz-container">
+                <div class="quiz-media">
+                  <span> 5 / 8</span>
+
+                  <img
+                    src="Assests/question5.png"
+                    alt="How many triangles are in this picture?"
+                    class="quiz-question_img"
+                  />
+                </div>
+
+                <div class="quiz-question-container">
+                  <h4 class="quiz-question">
+                    How many triangles are in this picture?
+                  </h4>
+                </div>
+
+                <div class="quiz-answers-container">
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-5"
+                      value="27"
+                      class="quiz-answers"
+                      required
+                    />27</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-5"
+                      value="0"
+                      class="quiz-answers"
+                      required
+                    />0</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-5"
+                      value="18"
+                      class="quiz-answers"
+                      required
+                    />18</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-5"
+                      value="18"
+                      class="quiz-answers"
+                      required
+                    />15</label
+                  >
+                </div>
+              </div>
+
+              <div class="quiz-container">
+                <div class="quiz-media">
+                  <span> 6 / 8</span>
+
+                  <img
+                    src="Assests/question6.png"
+                    alt="Complete this right angle equation: a2 + b2 =?"
+                    class="quiz-question_img"
+                  />
+                </div>
+
+                <div class="quiz-question-container">
+                  <h4 class="quiz-question">
+                    Complete this right angle equation: a2 + b2 =?
+                  </h4>
+                </div>
+
+                <div class="quiz-answers-container">
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-6"
+                      value="ab2"
+                      class="quiz-answers"
+                      required
+                    />ab2</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-6"
+                      value="c2"
+                      class="quiz-answers"
+                      required
+                    />c2</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-6"
+                      value="d2"
+                      class="quiz-answers"
+                      required
+                    />d2</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-6"
+                      value="30"
+                      class="quiz-answers"
+                      required
+                    />30</label
+                  >
+                </div>
+              </div>
+
+              <div class="quiz-container">
+                <div class="quiz-media">
+                  <span> 7 / 8</span>
+
+                  <img
+                    src="Assests/question7.png"
+                    alt="TWhat is a hypotenuse?"
+                    class="quiz-question_img"
+                  />
+                </div>
+
+                <div class="quiz-question-container">
+                  <h4 class="quiz-question">What is a hypotenuse?</h4>
+                </div>
+
+                <div class="quiz-answers-container">
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-7"
+                      value="A length with four sides"
+                      class="quiz-answers"
+                      required
+                    />A length with four sides</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-7"
+                      value="The total length of all three sides of the traingle"
+                      class="quiz-answers"
+                      required
+                    />The total length of all three sides of the traingle</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-7"
+                      value="A traingle with 3 right angles"
+                      class="quiz-answers"
+                      required
+                    />A traingle with 3 right angles</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-7"
+                      value="The longest side of triangle"
+                      class="quiz-answers"
+                      required
+                    />The longest side of triangle</label
+                  >
+                </div>
+              </div>
+
+              <div class="quiz-container">
+                <div class="quiz-media">
+                  <span> 8 / 8</span>
+
+                  <img
+                    src="Assests/question8.png"
+                    alt="How many angles are in a triangle?"
+                    class="quiz-question_img"
+                  />
+                </div>
+
+                <div class="quiz-question-container">
+                  <h4 class="quiz-question">
+                    How many angles are in a triangle?
+                  </h4>
+                </div>
+
+                <div class="quiz-answers-container">
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-8"
+                      value="1"
+                      class="quiz-answers"
+                      required
+                    />1</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-8"
+                      value="5"
+                      class="quiz-answers"
+                    />5</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-8"
+                      value="3"
+                      class="quiz-answers"
+                      required
+                    />3</label
+                  >
+                  <label for="quiz-option"
+                    ><input
+                      id="quiz-option"
+                      type="radio"
+                      name="question-8"
+                      value="0"
+                      class="quiz-answers"
+                      required
+                    />0</label
+                  >
+                </div>
+              </div>
+              <button class="btn-submit">Submit</button>
+            </form>
+
+            <h4 class="quiz-totalScore"></h4>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <ul class="link-list-item">
+          <li class="link-list">
+            <a
+              class="link"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=ashokpatel574@gmail.com"
+              target="_blank"
+              ><i class="bx bxl-gmail"></i
+            ></a>
+          </li>
+          <li class="link-list">
+            <a
+              class="link"
+              href="https://www.linkedin.com/in/ashokpatel574/"
+              target="_blank"
+              ><i class="bx bxl-linkedin-square"></i
+            ></a>
+          </li>
+          <li class="link-list">
+            <a
+              class="link"
+              href="https://github.com/ashokpatel574"
+              target="_blank"
+              ><i class="bx bxl-github"></i
+            ></a>
+          </li>
+          <li class="link-list">
+            <a
+              class="link"
+              href="https://twitter.com/ashokpatel574"
+              target="_blank"
+              ><i class="bx bxl-twitter"></i
+            ></a>
+          </li>
+        </ul>
+        <p class="footer-text">@Ashok Patel</p>
+      </footer>
+    </div>
+  </body>
+</html>
