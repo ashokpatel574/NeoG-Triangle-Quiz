@@ -20,16 +20,29 @@ formTriangleContainer.addEventListener("submit", (e) => {
   let sum = 0;
   e.preventDefault();
 
-  sum =
-    parseInt(firstAngleEl.value) +
-    parseInt(secondAngleEl.value) +
-    parseInt(thirdAngleEl.value);
-
-  if (sum === 180) {
-    formTriangleContainer_Result.innerText = "Yay, it forms a triangle :)";
+  if (
+    firstAngleEl.value === "" ||
+    parseInt(firstAngleEl.value) < 0 ||
+    secondAngleEl.value === "" ||
+    parseInt(secondAngleEl.value) < 0 ||
+    thirdAngleEl.value === "" ||
+    parseInt(thirdAngleEl.value) < 0
+  ) {
+    formTriangleContainer_Result.innerText = `Please enter postive angles`;
+    formTriangleContainer_Result.style.color = "red";
   } else {
-    formTriangleContainer_Result.innerText =
-      "OOPS, it does not form a triangle :(";
+    sum =
+      parseInt(firstAngleEl.value) +
+      parseInt(secondAngleEl.value) +
+      parseInt(thirdAngleEl.value);
+    formTriangleContainer_Result.style.color = "white";
+
+    if (sum === 180) {
+      formTriangleContainer_Result.innerText = "Yay, it forms a triangle :)";
+    } else {
+      formTriangleContainer_Result.innerText =
+        "OOPS, it does not form a triangle :(";
+    }
   }
 });
 
@@ -55,6 +68,11 @@ findHypotenuseContainer.addEventListener("submit", (e) => {
   if (firstLength.value === "" || secondLength.value === "") {
     findHypotenuseContainer_Result.innerText =
       " Please enter the length of two legs of a right angled triangle and know its hypotenuse ";
+    findHypotenuseContainer_Result.style.color = "red";
+  } else if (firstLength.value < 0 || secondLength.value < 0) {
+    findHypotenuseContainer_Result.innerText =
+      " Please enter the postive length of two legs of a right angled triangle ";
+    findHypotenuseContainer_Result.style.color = "red";
   } else {
     const firstLengthInput = parseInt(firstLength.value);
     const secondLengthInput = parseInt(secondLength.value);
@@ -63,10 +81,11 @@ findHypotenuseContainer.addEventListener("submit", (e) => {
       firstLengthInput * firstLengthInput +
         secondLengthInput * secondLengthInput
     );
+    findHypotenuseContainer_Result.style.color = "white";
 
     findHypotenuseContainer_Result.innerText = `The length of the hypotenuse is ${hypotenuselength.toFixed(
       2
-    )} units.`;
+    )} Sq units.`;
   }
 });
 
@@ -120,17 +139,23 @@ const guessThirdAngleContainer_Result = document.querySelector(
 guessThirdAngleContainer.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  let thirdAngleInput = Number(thirdAngleDiv.value);
-  let thirdAngle =
-    180 - Number(firstAngleDiv.innerText) - Number(secondAngleDiv.innerText);
-
-  if (thirdAngle === 180) {
-    guessThirdAngleContainer_Result.innerText = "Generate angles to proceed.";
+  if (Number(thirdAngleDiv.value) < 0 || thirdAngleDiv.value === "") {
+    guessThirdAngleContainer_Result.innerText = `Please enter postive third angle value`;
+    guessThirdAngleContainer_Result.style.color = "red";
   } else {
-    if (thirdAngleInput === thirdAngle) {
-      guessThirdAngleContainer_Result.innerText = "Correct guess :)";
+    let thirdAngleInput = Number(thirdAngleDiv.value);
+    let thirdAngle =
+      180 - Number(firstAngleDiv.innerText) - Number(secondAngleDiv.innerText);
+    guessThirdAngleContainer_Result.style.color = "white";
+
+    if (thirdAngle === 180) {
+      guessThirdAngleContainer_Result.innerText = "Generate angles to proceed.";
     } else {
-      guessThirdAngleContainer_Result.innerText = "Incorrect guess :(";
+      if (thirdAngleInput === thirdAngle) {
+        guessThirdAngleContainer_Result.innerText = "Correct guess :)";
+      } else {
+        guessThirdAngleContainer_Result.innerText = "Incorrect guess :(";
+      }
     }
   }
 });
@@ -146,8 +171,19 @@ const triangleAreaContainer = document.querySelector(".triangleArea-container");
 triangleAreaContainer.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const area = baseEl.value * heightEl.value * 0.5;
-  areaDiv.innerText = `The area of the triangle is ${area} Sq units.`;
+  if (
+    Number(baseEl.value) < 0 ||
+    Number(heightEl.value) < 0 ||
+    baseEl.value === "" ||
+    heightEl.value === ""
+  ) {
+    areaDiv.innerText = `Please enter postive height and base values `;
+    areaDiv.style.color = "red";
+  } else {
+    const area = baseEl.value * heightEl.value * 0.5;
+    areaDiv.innerText = `The area of the triangle is ${area} Sq units.`;
+    areaDiv.style.color = "white";
+  }
 });
 
 // General Quiz form
